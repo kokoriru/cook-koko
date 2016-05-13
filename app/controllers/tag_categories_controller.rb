@@ -1,0 +1,2 @@
+class TagCategoriesController < ApplicationController
+end
