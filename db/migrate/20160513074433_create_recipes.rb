@@ -6,7 +6,7 @@ class CreateRecipes < ActiveRecord::Migration
       t.string :url
       t.text :content, presence: true
       t.text :memo
-      t.integer :made_count
+      t.integer :made_count, default: 0
       t.timestamps null: false
     end
   end
