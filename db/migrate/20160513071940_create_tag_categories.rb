@@ -1,7 +1,7 @@
 class CreateTagCategories < ActiveRecord::Migration
   def change
     create_table :tag_categories do |t|
-      t.string :name, length: { maximum: 50 }, presence: true
+      t.string :name
       t.timestamps null: false
     end
   end
