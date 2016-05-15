@@ -35,6 +35,12 @@ class TagCategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @tag_category = TagCategory.find(params[:id])
+    @tag_category.destroy
+    redirect_to tag_categories_url, notice: 'TagCategories was successfully'
+  end
+
   private
 
   def tag_category_params

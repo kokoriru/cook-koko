@@ -6,6 +6,7 @@
       <tr>
         <td><%= link_to 'Back', tag_categories_path  %></td>
         <td><%= link_to 'Edit', edit_tag_category_path  %></td>
+        <td><%= link_to 'Destroy', tag_category_path, data: { :confirm => 'Are you sure?' }, :method => :delete %></td>
       </tr>
     </table>
   </li>
