@@ -8,7 +8,7 @@
   <% @tags.each do |tag| %>
     <tr>
       <td><%= tag.name %></td>
-      <td><%= tag.tag_category.name %></td>
+      <td><%= tag.tag_category.try(:name) %></td>
     </tr>
   <% end %>
 </table>
