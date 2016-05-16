@@ -1,10 +1,11 @@
 class TagsController < ApplicationController
+  before_action :set_tags, only: [:show, :edit, :update, :destroy] 
+
   def index
     @tags = Tag.all
   end
 
   def show
-    @tag = Tag.find(params[:id])
   end
 
   def new
@@ -12,7 +13,6 @@ class TagsController < ApplicationController
   end
 
   def edit
-    @tag = Tag.find(params[:id])
   end
 
   def create
@@ -26,8 +26,6 @@ class TagsController < ApplicationController
   end
 
   def update
-    @tag = Tag.find(params[:id])
-
     if @tag.update(tag_params)
       redirect_to tags_path, notice: 'Tag was successfully updated.'
     else
@@ -36,12 +34,15 @@ class TagsController < ApplicationController
   end
 
   def destroy
-    @tag = Tag.find(params[:id])
     @tag.destroy
     redirect_to tags_path, notice: 'Tag was successfully destroy'
   end
 
   private
+
+  def set_tags
+    @tag = Tag.find(params[:id])
+  end
 
   def tag_params
     params.require(:tag).permit(:name, :tag_category_id)
