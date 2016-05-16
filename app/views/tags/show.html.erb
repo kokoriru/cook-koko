@@ -4,9 +4,13 @@
   <tr>
     <th>タグ名</th>
     <th>カテゴリ</th>
+    <th></th>
+    <th></th>
   </tr>
   <tr>
     <td><%= @tag.name %></td>
     <td><%= @tag.tag_category.try(:name) %></td>
+    <td><%= link_to 'Back', tags_path %></td>
+    <td><%= link_to 'Edit', edit_tag_path %></td>
   </tr>
 </table>
