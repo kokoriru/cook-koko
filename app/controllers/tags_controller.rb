@@ -11,6 +11,10 @@ class TagsController < ApplicationController
     @tag = Tag.new
   end
 
+  def edit
+    @tag = Tag.find(params[:id])
+  end
+
   def create
     @tag = Tag.new(tag_params)
 
@@ -18,6 +22,16 @@ class TagsController < ApplicationController
       redirect_to tags_path, notice: 'Tag was succeccfully created.'
     else
       render :new
+    end
+  end
+
+  def update
+    @tag = Tag.find(params[:id])
+
+    if @tag.update(tag_params)
+      redirect_to tags_path, notice: 'Tag was successfully updated.'
+    else
+      render :edit
     end
   end
 
