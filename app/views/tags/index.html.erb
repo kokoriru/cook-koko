@@ -6,6 +6,7 @@
     <th>カテゴリ</th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
   <% @tags.each do |tag| %>
     <tr>
@@ -13,6 +14,7 @@
       <td><%= tag.tag_category.try(:name) %></td>
       <td><%= link_to 'Show', tag %></td>
       <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
+      <td><%= link_to 'Destroy', tag, data: { :confirm => 'Are you sure?' }, :method => :delete %></td>
     </tr>
   <% end %>
 </table>
