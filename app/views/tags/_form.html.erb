@@ -3,8 +3,6 @@
   <%= f.text_field :name, class: 'form-control' %>
   <br>
   <%= f.label :tag_category_id, "カテゴリ" %>
-  
-
   <%= f.select :tag_category_id, TagCategory.all.map{
     |tag_category| [tag_category.name, tag_category.id]
   } %>

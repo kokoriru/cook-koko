@@ -1,16 +1,20 @@
 <h1>TagCategory index</h1>
 
-<% @tag_categories.each do |tag_category| %>
-  <ul>
-    <li>
-      <%= tag_category.name %>
-      &nbsp;
-      <%= link_to 'Show', tag_category %>
-      &nbsp;
-      <%= link_to 'Edit', edit_tag_category_path(tag_category) %>
-      &nbsp;
-      <%= link_to 'Destroy', tag_category, data: { :confirm => 'Are you sure?' }, :method => :delete %>
-    </li>
-  </ul>
-<% end %>
+<table>
+  <tr>
+    <th>カテゴリ</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @tag_categories.each do |tag_category| %>
+    <tr>
+      <td><%= tag_category.name %></td>
+      <td><%= link_to 'Show', tag_category %></td>
+      <td><%= link_to 'Edit', edit_tag_category_path(tag_category) %></td>
+      <td><%= link_to 'Destroy', tag_category, data: { :confirm => 'Are you sure?' }, :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
 <%= link_to 'New', new_tag_category_path %>
