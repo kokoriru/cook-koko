@@ -1,0 +1,12 @@
+<h1>Recipe index</h1>
+
+<table>
+  <tr>
+    <th>レシピ名</th>
+  </tr>
+  <% @recipes.each do |recipe| %>
+  <tr>
+    <td><%= recipe.name %></td>
+  </tr>
+  <% end %>
+</table>
