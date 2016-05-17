@@ -11,6 +11,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
   def create
     @recipe = Recipe.new(recipe_params)
 
@@ -18,6 +22,16 @@ class RecipesController < ApplicationController
       redirect_to recipes_path, notice: 'Recipe was successfully created.'
     else
       render :new
+    end
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+
+    if @recipe.update(recipe_params)
+      redirect_to recipes_path, notice: 'Recipe was successfully updated.'
+    else
+      render :edit
     end
   end
 
