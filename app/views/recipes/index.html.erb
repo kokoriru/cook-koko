@@ -5,12 +5,14 @@
     <th>レシピ名</th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
   <% @recipes.each do |recipe| %>
   <tr>
     <td><%= recipe.name %></td>
     <td><%= link_to 'Show', recipe %></td>
     <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+    <td><%= link_to 'Destroy', recipe, data: { :confirm => 'Are you sure?' }, :method => :delete %></td>
   </tr>
   <% end %>
 </table>
