@@ -1,0 +1,26 @@
+<h1>Recipe show</h1>
+
+<h2><%= @recipe.name %></h2>
+<br>
+
+<h3>参考URL</h3>
+<div><%= @recipe.url %></div>
+<br>
+
+<h3>材料</h3>
+  <dl>
+    <dt><%= @recipe.material %></dt><dd>???ml</dd>
+  </dl>
+<br>
+
+<h3>作り方</h3>
+<div><%= @recipe.content %></div>
+<br>
+
+<h3>一言メモ</h3>
+<div><%= @recipe.memo %></div>
+<br>
+
+<%= link_to 'Back', recipes_path %>
+<%= link_to 'Edit', edit_recipe_path %>
+<%= link_to 'Destroy', recipe_path, data: { :confirm => 'Are you sure?' }, :method => :delete %>
