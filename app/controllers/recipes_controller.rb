@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @tag = Tag.find(@recipe.tag_ids)
   end
 
   def new
@@ -13,7 +14,6 @@ class RecipesController < ApplicationController
   end
 
   def edit
-    @tag = Tag.all
   end
 
   def create

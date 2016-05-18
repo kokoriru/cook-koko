@@ -23,8 +23,8 @@
 
 <h3>関連タグ</h3>
 <div>
-  <% @recipe.tag_ids.each do |tag| %>
-    <%= Tag.find(tag).name %>
+  <% @tag.each do |tag| %>
+    <%= tag.name %>
   <% end %>
 </div>
 <br>
