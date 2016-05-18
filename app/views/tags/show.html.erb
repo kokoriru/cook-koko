@@ -7,10 +7,16 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
   <tr>
     <td><%= @tag.name %></td>
     <td><%= @tag.tag_category.try(:name) %></td>
+    <td>
+      <% @recipe.each do |recipe| %>
+        <%= recipe.name %>
+      <% end %>
+    </td>
     <td><%= link_to 'Back', tags_path %></td>
     <td><%= link_to 'Edit', edit_tag_path %></td>
     <td><%= link_to 'Destroy', tag_path, data: { :confirm => 'Are you sure?' }, :method => :delete %></td>

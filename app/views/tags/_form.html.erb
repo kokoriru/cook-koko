@@ -2,10 +2,18 @@
   <%= f.label :name, "タグ名" %>
   <%= f.text_field :name, class: 'form-control' %>
   <br>
+
   <%= f.label :tag_category_id, "カテゴリ" %>
   <%= f.select :tag_category_id, TagCategory.all.map{
     |tag_category| [tag_category.name, tag_category.id]
   } %>
+  <br>
+
+  <%= f.label :recipes %>
+  <%= collection_check_boxes(:tag, :recipe_ids, Recipe.all, :id, :name ) do |recipe| %>
+    <% recipe.label { recipe.check_box + recipe.text } %>
+  <% end %>
+  <br>
 
   <%= f.submit "登録する", class: 'btn btn-primary' %>
 <% end %>
