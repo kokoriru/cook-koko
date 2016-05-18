@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    @tag = Tag.all
   end
 
   def create
@@ -46,6 +47,6 @@ class RecipesController < ApplicationController
 
 
   def recipe_params
-    params.require(:recipe).permit(:name, :material, :url, :content, :memo)
+    params.require(:recipe).permit(:name, :material, :url, :content, :memo, { :tag_ids=> [] })
   end
 end
