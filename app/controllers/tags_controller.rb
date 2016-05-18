@@ -6,6 +6,7 @@ class TagsController < ApplicationController
   end
 
   def show
+    @recipe = Recipe.find(@tag.recipe_ids)
   end
 
   def new
@@ -45,6 +46,9 @@ class TagsController < ApplicationController
   end
 
   def tag_params
-    params.require(:tag).permit(:name, :tag_category_id)
+    params.require(:tag).permit(:name, :tag_category_id, { :recipe_ids => [] })
   end
 end
+
+
+{ :tag_ids=> [] }
