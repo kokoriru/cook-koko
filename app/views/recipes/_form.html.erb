@@ -3,23 +3,25 @@
 <dl>
   <dt><%= f.label :name, "レシピ名" %></dt>
   <dd><%= f.text_field :name, class: 'form-control' %></dd>
-  <br>
 
   <dt><%= f.label :material, "材料" %></dt>
   <dd><%= f.text_field :material, class: 'form-control' %></dd>
-  <br>
 
   <dt><%= f.label :url, "参考URL" %></dt>
   <dd><%= f.text_field :url, class: 'form-control' %></dd>
-  <br>
 
   <dt><%= f.label :content, "作り方" %></dt>
   <dd><%= f.text_area :content, class: 'form-control' %></dd>
-  <br>
 
   <dt><%= f.label :memo, "一言メモ" %></dt>
   <dd><%= f.text_area :memo, class: 'form-control' %></dd>
-  <br>
+
+  <dt><%= f.label :tags %></dt>
+  <dd>
+    <%= collection_check_boxes(:recipe, :tag_ids, Tag.all, :id, :name ) do |tag| %>
+      <% tag.label { tag.check_box + tag.text } %>
+    <% end %>
+  </dd>
 </dl>
 
 <%= f.submit "登録する", class: 'btn, btn-primary' %>

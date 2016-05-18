@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @tag = Tag.find(@recipe.tag_ids)
   end
 
   def new
@@ -46,6 +47,6 @@ class RecipesController < ApplicationController
 
 
   def recipe_params
-    params.require(:recipe).permit(:name, :material, :url, :content, :memo)
+    params.require(:recipe).permit(:name, :material, :url, :content, :memo, { :tag_ids=> [] })
   end
 end

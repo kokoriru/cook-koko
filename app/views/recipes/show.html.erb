@@ -21,6 +21,14 @@
 <div><%= @recipe.memo %></div>
 <br>
 
+<h3>関連タグ</h3>
+<div>
+  <% @tag.each do |tag| %>
+    <%= tag.name %>
+  <% end %>
+</div>
+<br>
+
 <%= link_to 'Back', recipes_path %>
 <%= link_to 'Edit', edit_recipe_path %>
 <%= link_to 'Destroy', recipe_path, data: { :confirm => 'Are you sure?' }, :method => :delete %>
