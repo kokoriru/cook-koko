@@ -49,6 +49,3 @@ class TagsController < ApplicationController
     params.require(:tag).permit(:name, :tag_category_id, { :recipe_ids => [] })
   end
 end
-
-
-{ :tag_ids=> [] }
