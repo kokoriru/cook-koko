@@ -3,12 +3,18 @@
 <table>
   <tr>
     <th>カテゴリ</th>
+    <th>タグ</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
   <tr>
     <td><%= @tag_category.name %></td>
+    <td>
+      <% @tag_category.tags.each do |tag| %>
+        <%= tag.try(:name) %>
+      <% end %>
+    </td>
     <td><%= link_to 'Back', tag_categories_path  %></td>
     <td><%= link_to 'Edit', edit_tag_category_path  %></td>
     <td><%= link_to 'Destroy', tag_category_path, data: { :confirm => 'Are you sure?' }, :method => :delete %></td>
