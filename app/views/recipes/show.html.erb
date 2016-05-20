@@ -3,6 +3,12 @@
 <h2><%= @recipe.name %></h2>
 <br>
 
+<h3>作った回数</h3>
+<div><%= MadeHistory.where(recipe_id: @recipe.id).count %>回</div>
+<%= form_tag recipe_made_history_path(@recipe) do %>
+  <%= submit_tag "作ったよボタン", class: 'btn btn-primary' %>
+<% end %>
+
 <h3>参考URL</h3>
 <div><%= @recipe.url %></div>
 <br>
