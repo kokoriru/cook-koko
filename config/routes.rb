@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'recipes#index'
-  resources :recipes
+  resources :recipes do
+    post 'made_history', to: 'made_histories#create'
+  end
   resources :tags
   resources :tag_categories
 
