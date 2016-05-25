@@ -1,5 +1,5 @@
 class RankingPagesController < ApplicationController
   def rank
-    @recipes = Recipe.all
+    @recipes = Recipe.order('created_at ASC')
   end
 end

@@ -1,0 +1,11 @@
+<h1>Recipe ranking</h1>
+
+<ol type="1">
+<% @recipes.each do |recipe| %>
+  <li>
+    <%= recipe.name %>
+    <%= recipe.created_at %>
+  </li>
+  <br>
+<% end %>
+</ol>
