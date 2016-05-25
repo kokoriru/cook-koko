@@ -1,0 +1,10 @@
+<%= form_tag('/ranking_pages/rank') do %>
+  <%= select_tag 'rank[rank_order]', options_for_select([
+    ["レシピ名(昇順)", "recipe_name_ASC"],
+    ["レシピ名(降順)", "recipe_name_DESC"],
+    ["前回作った日(昇順)", "last_cook_ASC"],
+    ["前回作った日(降順)", "last_cook_DESC"],
+    ["作った回数(昇順)", "made_count_ASC"],
+    ["作った回数(降順)", "made_count_DESC"]]),
+    :prompt => "選択してください" %>
+<% end %>
